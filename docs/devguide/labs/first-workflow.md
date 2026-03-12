@@ -55,7 +55,7 @@ Let's talk about this workflow a little more so that we can gain some context.
 
 This line here is how we name our workflow. In this case our workflow name is `first_sample_workflow`
 
-This workflow contains just one worker. The workers are defined under the key `tasks`. Here is the worker definition
+This workflow contains just one task. The tasks are defined under the key `tasks`. Here is the task configuration
 with the most important values:
 
 ```json
@@ -72,16 +72,16 @@ with the most important values:
 }
 ```
 
-Here is a list of fields and what it does:
+Here is a list of fields and what they do:
 
-1. `"name"` : Name of our worker
-2. `"taskReferenceName"` : This is a reference to this worker in this specific workflow implementation. We can have multiple
-   workers of the same name in our workflow, but we will need a unique task reference name for each of them. Task
+1. `"name"` : Name of the task
+2. `"taskReferenceName"` : This is a reference to this task in this specific workflow. We can have multiple
+   tasks of the same name in our workflow, but we will need a unique task reference name for each of them. Task
    reference name should be unique across our entire workflow.
-3. `"inputParameters"` : These are the inputs into our worker. We can hard code inputs as we have done here. We can
-   also provide dynamic inputs such as from the workflow input or based on the output of another worker. We can find
+3. `"inputParameters"` : These are the inputs into the task. We can hard code inputs as we have done here. We can
+   also provide dynamic inputs such as from the workflow input or based on the output of another task. We can find
    examples of this in our documentation.
-4. `"type"` : This is what defines what the type of worker is. In our example - this is `HTTP`. There are more task
+4. `"type"` : This defines the task type. In our example, this is `HTTP`. There are more task
    types which we can find in the Conductor documentation.
 5. `"http_request"` : This is an input that is required for tasks of type `HTTP`. In our example we have provided a well
    known internet JSON API url and the type of HTTP method to invoke - `GET`
