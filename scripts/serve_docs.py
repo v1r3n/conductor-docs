@@ -1,11 +1,20 @@
 import subprocess
 import os
+from pathlib import Path
 
-# Change to docs parent directory
-os.chdir("/vercel/share/v0-project")
+# Get the project root from the script's location
+script_dir = Path(__file__).parent.resolve()
+project_root = script_dir.parent
+
+print(f"Script directory: {script_dir}")
+print(f"Project root: {project_root}")
+
+# Change to project root
+os.chdir(project_root)
 
 print(f"Working directory: {os.getcwd()}")
 print(f"mkdocs.yml exists: {os.path.exists('mkdocs.yml')}")
+print(f"docs folder exists: {os.path.exists('docs')}")
 
 # Install dependencies first
 print("Installing MkDocs and dependencies...")
