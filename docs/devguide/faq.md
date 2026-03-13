@@ -30,11 +30,6 @@ Other way is you can use any of the available scheduling systems to make REST ca
 More details about [eventing](../documentation/configuration/eventhandlers.md).
 
 
-## How do I setup Dynomite cluster?
-
-Visit Dynomite's [Github page](https://github.com/Netflix/dynomite) to find details on setup and support mechanism.
-
-
 ## Can I use conductor with Ruby / Go / Python?
 
 Yes.  Workers can be written any language as long as they can poll and update the task results via HTTP endpoints.
@@ -42,11 +37,6 @@ Yes.  Workers can be written any language as long as they can poll and update th
 Conductor provides frameworks for Java and Python to simplify the task of polling and updating the status back to Conductor server.
 
 **Note:** Python and Go clients have been contributed by the community.
-
-
-## How can I get help with Dynomite?
-
-Visit Dynomite's [Github page](https://github.com/Netflix/dynomite) to find details on setup and support mechanism.
 
 
 ## My workflow is running and the task is SCHEDULED but it is not being processed.

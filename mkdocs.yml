@@ -1,5 +1,5 @@
-site_name: Conductor Documentation
-site_description: Conductor is a platform created to orchestrate workflows that span across microservices.
+site_name: Conductor
+site_description: Durable execution engine for building resilient distributed systems, AI agents, and workflow automation at any scale.
 repo_url: https://github.com/conductor-oss/conductor
 site_url: https://conductor-oss.github.io/conductor
 edit_uri: ''
@@ -8,61 +8,55 @@ use_directory_urls: false
 
 nav:
   - index.md
-  - Developer Guide:
-    - devguide/concepts/why.md 
+  - Getting Started:
+    - devguide/concepts/why.md
+    - devguide/concepts/index.md
+    - devguide/labs/first-workflow.md
     - Running Conductor:
       - devguide/running/docker.md
       - devguide/running/source.md
       - devguide/running/hosted.md
-    - Concepts: 
-      - devguide/concepts/index.md
-      - devguide/concepts/workflows.md
-      - devguide/concepts/tasks.md
-      - devguide/concepts/workers.md
-    - Architecture: 
+  - Core Concepts:
+    - Workflows: devguide/concepts/workflows.md
+    - Tasks: devguide/concepts/tasks.md
+    - Workers: devguide/concepts/workers.md
+    - Architecture:
       - devguide/architecture/index.md
       - devguide/architecture/tasklifecycle.md
       - devguide/architecture/technicaldetails.md
       - devguide/architecture/directed-acyclic-graph.md
-    - How Tos:
-      - Workflows:
-        - devguide/how-tos/Workflows/creating-workflows.md
-        - devguide/how-tos/Workflows/handling-errors.md
-        - devguide/how-tos/Workflows/starting-workflows.md
-        - devguide/how-tos/Workflows/searching-workflows.md
-        - devguide/how-tos/Workflows/viewing-workflow-executions.md
-        - devguide/how-tos/Workflows/debugging-workflows.md
-        - devguide/how-tos/Workflows/versioning-workflows.md
-      - Tasks:
-        - devguide/how-tos/Tasks/choosing-tasks.md
-        - devguide/how-tos/Tasks/reusing-tasks.md
-        - devguide/how-tos/Tasks/task-inputs.md
-        - devguide/how-tos/Tasks/creating-tasks.md
-        - devguide/how-tos/Tasks/extending-system-tasks.md
-      - Workers:
-        - devguide/how-tos/Workers/build-a-java-task-worker.md
-        - devguide/how-tos/Workers/build-a-python-task-worker.md
-        - devguide/how-tos/Workers/build-a-golang-task-worker.md
-        - devguide/how-tos/Tasks/monitoring-task-queues.md
-        - devguide/how-tos/Workers/scaling-workers.md
+  - Guides:
+    - Workflows:
+      - devguide/how-tos/Workflows/creating-workflows.md
+      - devguide/how-tos/Workflows/handling-errors.md
+      - devguide/how-tos/Workflows/starting-workflows.md
+      - devguide/how-tos/Workflows/searching-workflows.md
+      - devguide/how-tos/Workflows/viewing-workflow-executions.md
+      - devguide/how-tos/Workflows/debugging-workflows.md
+      - devguide/how-tos/Workflows/versioning-workflows.md
+    - Tasks:
+      - devguide/how-tos/Tasks/choosing-tasks.md
+      - devguide/how-tos/Tasks/reusing-tasks.md
+      - devguide/how-tos/Tasks/task-inputs.md
+      - devguide/how-tos/Tasks/creating-tasks.md
+      - devguide/how-tos/Tasks/extending-system-tasks.md
+    - Workers:
+      - devguide/how-tos/Workers/build-a-java-task-worker.md
+      - devguide/how-tos/Workers/build-a-python-task-worker.md
+      - devguide/how-tos/Workers/build-a-golang-task-worker.md
+      - devguide/how-tos/Tasks/monitoring-task-queues.md
+      - devguide/how-tos/Workers/scaling-workers.md
+    - Event Handlers:
+      - devguide/labs/eventhandlers.md
     - Tutorial:
       - devguide/labs/index.md
-      - devguide/labs/first-workflow.md
-      - devguide/labs/eventhandlers.md
       - devguide/labs/kitchensink.md
-    - Best Practices: devguide/bestpractices.md
-    - Advanced Topics:
-      - documentation/advanced/extend.md
-      - documentation/advanced/isolationgroups.md
-      - documentation/advanced/annotation-processor.md
-      - documentation/advanced/archival-of-workflows.md
-      - documentation/advanced/azureblob-storage.md
-      - documentation/advanced/externalpayloadstorage.md
-      - documentation/advanced/redis.md
-      - documentation/advanced/postgresql.md
-      - documentation/advanced/opensearch.md
-    - FAQ: devguide/faq.md
-  - Reference: 
+  - AI & Agents:
+    - ai/index.md
+    - LLM Providers: ai/llm-providers.md
+    - Vector Databases: ai/vector-databases.md
+    - Agent Orchestration: ai/agent-orchestration.md
+  - Reference:
     - API Specification:
       - documentation/api/index.md
       - documentation/api/metadata.md
@@ -108,33 +102,88 @@ nav:
       - documentation/clientsdks/go-sdk.md
       - documentation/clientsdks/python-sdk.md
       - documentation/clientsdks/js-sdk.md
+  - Operations:
+    - Best Practices: devguide/bestpractices.md
+    - Advanced Topics:
+      - documentation/advanced/extend.md
+      - documentation/advanced/isolationgroups.md
+      - documentation/advanced/annotation-processor.md
+      - documentation/advanced/archival-of-workflows.md
+      - documentation/advanced/azureblob-storage.md
+      - documentation/advanced/externalpayloadstorage.md
+      - documentation/advanced/redis.md
+      - documentation/advanced/postgresql.md
+      - documentation/advanced/opensearch.md
+    - FAQ: devguide/faq.md
   - Resources:
     - Contributing: resources/contributing.md
-    - Code of Conduct: https://orkes.io/orkes-conductor-community-code-of-conduct
+    - Code of Conduct: resources/code-of-conduct.md
     - Related Projects: resources/related.md
     - License: resources/license.md
-theme: 
+
+theme:
   name: material
   logo: img/logo.svg
   custom_dir: docs/overrides
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
     - navigation.footer
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
 extra_css:
   - css/custom.css
+
 plugins:
   - search
   - macros
+
 markdown_extensions:
   - admonition
   - codehilite
   - attr_list
+  - md_in_html
+  - tables
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences  
-copyright: Conductor authors
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/conductor-oss/conductor
+    - icon: fontawesome/brands/slack
+      link: https://join.slack.com/t/oraborkes/shared_invite/zt-xyxqyseb-y~CnN6kJeR5W6SHpQWTbgg
+
+copyright: Copyright &copy; Conductor OSS Authors

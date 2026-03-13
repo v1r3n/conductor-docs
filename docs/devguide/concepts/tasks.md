@@ -25,7 +25,7 @@ Worker tasks (`SIMPLE`) can be used to implement custom logic outside the scope 
 ## Task definition
 [Task definitions](../../documentation/configuration/taskdef.md) are used to define a task's default parameters, like inputs and output keys, timeouts, and retries. This provides reusability across workflows, as the registered task definition will be referenced when a task is configured in a workflow definition.
 
-When using Worker tasks (`SIMPLE`), its task definition must be registered to the Conductor server before it can execute in a workflow. Because system tasks are managed by Conductor, tt is not necessary to add a task definition for system tasks unless you wish to customize its default parameters.
+When using Worker tasks (`SIMPLE`), its task definition must be registered to the Conductor server before it can execute in a workflow. Because system tasks are managed by Conductor, it is not necessary to add a task definition for system tasks unless you wish to customize its default parameters.
 
 
 ## Task configuration
